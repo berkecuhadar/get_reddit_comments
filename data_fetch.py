@@ -43,9 +43,8 @@ def getComments(subreddit : str, s_limit : int, replace_limit : int):
     return parents_dump,comments_dump
 
 def json_convert(data1,data2):
-    with open("json/parents_dump.json","a") as f:
-        json.dump(data1,f,indent=4)
-    with open("json/comments_dump.json","a") as f:
-        json.dump(data2,f,indent=4)
-
+    with open("json/parents_dump.json","a", encoding="utf8") as f:
+        json.dump(data1,f,indent=4,ensure_ascii=False)
+    with open("json/comments_dump.json","a",encoding="utf8") as f:
+        json.dump(data2,f,indent=4,ensure_ascii=False)
 
